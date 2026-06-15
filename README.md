@@ -13,3 +13,4 @@ a Github repo with the config may be easier, just clone
 the repo in the place where the config should be and pull/push,
 that way I can have it updated everywhere! Nice isn't it?
 
+Test
