@@ -54,3 +54,7 @@ vim.keymap.set('i', 'vb', '<Esc>', { desc = 'Escape insert' })
 
 -- Quick vsplit
 vim.keymap.set('n', '<leader>v', '<cmd>vsplit<CR>', { desc = 'Split view' })
+
+-- Terminal on nvim!
+vim.keymap.set('n', '<leader>t', ':belowright 15sp | terminal<CR>a', { desc = "Open terminal in bottom" })
+vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { desc = "Get out of terminal mode" })
