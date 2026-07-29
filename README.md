@@ -14,4 +14,20 @@ the repo in the place where the config should be and pull/push,
 that way I can have it updated everywhere! Nice isn't it?
 
 
-version: 1.0.0
+I also decided to use default harpoon cuz using telescope kinda breaks it so
+there it is. 
+
+## Terminal configs
+font:
+[Cascadia Mono]( https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/CascadiaMono.zip)
+
+font size:
+12
+
+line height: 
+1.2
+
+cell width:
+0.6
+
+version: 1.0.1
