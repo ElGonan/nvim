@@ -30,4 +30,4 @@ line height:
 cell width:
 0.6
 
-version: 1.0.1
+version: 1.0.2
