@@ -8,11 +8,10 @@ each install with whatever I decide to add to my config,
 any new keybinding or plugin, i have to remember to update
 it on all the nvims I use.
 
-To avoid doing that nasty work, I think maybe just having
+To avoid doing that nasty work, I thought maybe just having
 a Github repo with the config may be easier, just clone
 the repo in the place where the config should be and pull/push,
 that way I can have it updated everywhere! Nice isn't it?
-
 
 I also decided to use default harpoon cuz using telescope kinda breaks it so
 there it is. 
@@ -30,4 +29,5 @@ line height:
 cell width:
 0.6
 
+## Version
 version: 1.0.2
