@@ -88,8 +88,38 @@ return {
 
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
+            -- Locate the project's virtualenv interpreter, cross-platform.
+            -- Returns nil when there is no .venv, letting pyright fall back to
+            -- whatever python it finds on PATH.
+            local function venv_python(root)
+                local candidates = {}
+                if root then
+                    table.insert(candidates, root .. "/.venv/bin/python")        -- macOS / Linux
+                    table.insert(candidates, root .. "/.venv/Scripts/python.exe") -- Windows
+                end
+                local active = vim.env.VIRTUAL_ENV
+                if active then
+                    table.insert(candidates, active .. "/bin/python")
+                    table.insert(candidates, active .. "/Scripts/python.exe")
+                end
+                for _, path in ipairs(candidates) do
+                    if vim.uv.fs_stat(path) then
+                        return vim.fs.normalize(path)
+                    end
+                end
+                return nil
+            end
+
             vim.lsp.config("pyright", {
                 capabilities = capabilities,
+                before_init = function(_, config)
+                    local python = venv_python(config.root_dir)
+                    if python then
+                        config.settings = vim.tbl_deep_extend("force", config.settings or {}, {
+                            python = { pythonPath = python },
+                        })
+                    end
+                end,
                 settings = {
                     python = {
                         analysis = {
