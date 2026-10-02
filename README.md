@@ -30,4 +30,4 @@ cell width:
 0.6
 
 ## Version
-version: 1.0.3
+version: 1.0.4

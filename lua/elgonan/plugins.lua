@@ -66,6 +66,7 @@ return {
 	-- mason nvim
 	{
 		"mason-org/mason.nvim",
+		cmd = "Mason",
 		opts = {
 			ui = {
 				icons = {
@@ -78,18 +79,16 @@ return {
 	},
 
 
-    -- intellisense
+    -- lsp
     {
-        "hrsh7th/nvim-cmp",
+        "neovim/nvim-lspconfig",
+        event = { "BufReadPre", "BufNewFile" },
         dependencies = {
-            "hrsh7th/cmp-nvim-lsp",
-            "L3MON4D3/LuaSnip",
-            "saadparwaiz1/cmp_luasnip",
-            "neovim/nvim-lspconfig",
+            "mason-org/mason.nvim",
             "williamboman/mason-lspconfig.nvim",
+            "hrsh7th/cmp-nvim-lsp",
         },
         config = function()
-            require("mason").setup()
             require("mason-lspconfig").setup({
                 ensure_installed = { "pyright", "ruff", "angularls" },
             })
@@ -166,7 +165,20 @@ return {
                 root_markers = { "angular.json", "nx.json" },
             })
             vim.lsp.enable("angularls")
+        end,
+    },
 
+
+    -- intellisense
+    {
+        "hrsh7th/nvim-cmp",
+        event = "InsertEnter",
+        dependencies = {
+            "hrsh7th/cmp-nvim-lsp",
+            "L3MON4D3/LuaSnip",
+            "saadparwaiz1/cmp_luasnip",
+        },
+        config = function()
             local cmp = require("cmp")
             cmp.setup({
                 snippet = {
