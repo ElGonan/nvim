@@ -4,19 +4,10 @@ return {
 		dependencies = {
 			'nvim-lua/plenary.nvim',
 			-- optional but recommended
-			{ 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+			-- { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
 		}
 	},
 
-
-	-- lua/plugins/rose-pine.lua
-	{
-		"rose-pine/neovim",
-		name = "rose-pine",
-		config = function()
-			vim.cmd("colorscheme rose-pine")
-		end
-	},
 
     -- shades of purple theme
     -- {
@@ -27,6 +18,8 @@ return {
     --         vim.cmd("colorscheme shades_of_purple")
     --     end,
     -- },
+
+
     -- lualine letsgooooo
     {
         'nvim-lualine/lualine.nvim',
@@ -48,19 +41,6 @@ return {
 
             })
         end,
-    },
-
-    -- COMENTED SINCE I WILL TRY DIFFVIEW
-	-- fugitive vim
-	-- {
-	-- 	'tpope/vim-fugitive',
-	-- },
-    
-
-    -- DIFFVIEW
-    {
-        "sindrets/diffview.nvim",
-        dependencies = { 'nvim-tree/nvim-web-devicons' }
     },
 
 	-- mason nvim
@@ -232,12 +212,5 @@ return {
         ---@type ibl.config
         opts = {},
     },
-
-    -- harpoon 2: the revenge
-    {
-        "ThePrimeagen/harpoon",
-        branch = "harpoon2",
-        dependencies = { "nvim-lua/plenary.nvim" }
-    }
 }
 
