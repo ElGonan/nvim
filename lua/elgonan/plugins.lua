@@ -50,10 +50,18 @@ return {
         end,
     },
 
+    -- COMENTED SINCE I WILL TRY DIFFVIEW
 	-- fugitive vim
-	{
-		'tpope/vim-fugitive',
-	},
+	-- {
+	-- 	'tpope/vim-fugitive',
+	-- },
+    
+
+    -- DIFFVIEW
+    {
+        "sindrets/diffview.nvim",
+        dependencies = { 'nvim-tree/nvim-web-devicons' }
+    },
 
 	-- mason nvim
 	{

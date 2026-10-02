@@ -1,3 +1,9 @@
-vim.keymap.set("n", "<leader>gs", vim.cmd.Git);
-vim.keymap.set("n", "<leader>gd", "<cmd>Gdiffsplit<CR>")
-vim.keymap.set("n", "<leader>gb", "<cmd>Git blame<CR>")
+-- vim.keymap.set("n", "<leader>gs", vim.cmd.Git);
+-- vim.keymap.set("n", "<leader>gd", "<cmd>Gdiffsplit<CR>")
+-- vim.keymap.set("n", "<leader>gb", "<cmd>Git blame<CR>")
+--
+--
+-- -- Color setting
+-- vim.api.nvim_set_hl(0, "@diff.plus",  { link = "Added" })
+-- vim.api.nvim_set_hl(0, "@diff.minus", { link = "Removed" })
+-- vim.api.nvim_set_hl(0, "@diff.delta", { link = "Changed" })
