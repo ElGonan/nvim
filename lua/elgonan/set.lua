@@ -49,3 +49,13 @@ vim.diagnostic.config({
     severity_sort = true,
     float = { border = "rounded" },
 })
+
+vim.opt.swapfile = false
+vim.api.nvim_create_autocmd({"FocusGained", "BufEnter", "CursorHold" }, {
+    group = vim.api.nvim_create_augroup("elgonan_checktime", { clear = true }),
+    callback = function()
+        if vim.fn.getcmdwintype() == "" then
+            vim.cmd("checktime")
+        end
+    end,
+})
